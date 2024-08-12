@@ -1,0 +1,36 @@
+<header class="mat-elevation-z1">
+  <img
+    alt="Logo de ATOM Chat"
+    ngSrc="assets/images/logo-atom-chat.png"
+    width="192.5"
+    height="55"
+  />
+  <h1 class="welcome-txt">
+    Gestor de tareas
+    <mat-icon id="exit" aria-hidden="false" aria-label="logout" title="Log Out" fontIcon="logout" (click)="logout()"></mat-icon>
+  </h1>
+</header>
+<div class="welcome-container" #greeting>
+  @for(task of tasks; track task.id) {
+  <mat-card class="card" appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>
+        <div class="title">{{ task.title }}</div>
+        <div class="complete">
+          <mat-slide-toggle labelPosition="before" (change)="complete($event, task.id)" [checked]="task.state === 'completado'">
+            Completada
+          </mat-slide-toggle></div>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content [ngClass]="{'completed' : task.state === 'completado'}">
+      <p>{{ task.desc }}</p>
+    </mat-card-content>
+    <mat-card-footer class="card-footer" [ngClass]="{'completed' : task.state === 'completado'}">
+      <span class="date">{{ formatDate(task.created) }}</span>
+      <mat-icon aria-hidden="false" aria-label="edit" title="edit" fontIcon="edit" (click)="openDialog(task)"></mat-icon>
+      <mat-icon aria-hidden="false" aria-label="delete" title="delete" fontIcon="delete" (click)="delete(task.id)"></mat-icon>
+    </mat-card-footer>
+  </mat-card>
+  }
+</div>
+<button id="addTask" mat-button cdkFocusInitial (click)="openDialog()">Agregar tarea</button>

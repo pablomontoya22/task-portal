@@ -1,0 +1,45 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  margin: 15px;
+
+  .form {
+    border: 1px solid black;
+    width: 20em;
+    height: 18em;
+    padding: 3em;
+    background-color: #f9f9f97d;
+    box-shadow: 0 0 11px black;
+
+    .mat-mdc-form-field {
+      width: 100%;
+      margin-top: 12px;
+    }
+
+    .newUserForm .mat-mdc-form-field {
+      margin-top: 0;
+    }
+  }
+
+  .logo {
+    margin-bottom: 20px;
+  }
+
+  button {
+    height: 3em;
+    width: 7em;
+    margin: 0 10px;
+  }
+
+  .add-user {
+    margin-top: 15px;
+
+    strong {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}

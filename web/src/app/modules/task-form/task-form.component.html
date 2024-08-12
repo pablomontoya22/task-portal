@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>{{ action }} tarea</h2>
+<mat-dialog-content [formGroup]="form">
+  <div>
+    <mat-form-field>
+      <mat-label>Titulo</mat-label>
+      <input matInput formControlName="title" />
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>Descripción</mat-label>
+      <textarea
+        matInput
+        formControlName="desc"
+        cdkTextareaAutosize
+        #autosize="cdkTextareaAutosize"
+        cdkAutosizeMinRows="14"
+        cdkAutosizeMaxRows="14"
+      ></textarea>
+    </mat-form-field>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="save()" cdkFocusInitial>{{ action }}</button>
+  <button mat-button (click)="cancel()">Cancelar</button>
+</mat-dialog-actions>

@@ -1,0 +1,49 @@
+<div class="login">
+  <div class="form" [formGroup]="form">
+    <div class="logo">
+      <img
+        alt="Logo de ATOM Chat"
+        ngSrc="assets/images/logo-atom-chat.png"
+        width="192.5"
+        height="55"
+      />
+    </div>
+    @if(addNewUser) {
+    <div>
+      <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="newName" />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="newEmail" />
+      </mat-form-field>
+    </div>
+    <div class="newUserForm">
+      <button mat-button (click)="addUser()">Agregar</button>
+      <button mat-button (click)="showLoginForm()">Cancelar</button>
+    </div>
+    } @else {
+    <div>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" />
+      </mat-form-field>
+    </div>
+    <div>
+      <button mat-button (click)="login()">Ingresar</button>
+    </div>
+    } @if(showAddMsg) {
+    <div class="add-user">
+      Usuario no encontrado haga <strong (click)="showUserForm()">click</strong> para
+      crear un nuevo usuario
+    </div>
+    } @if(msg) {
+    <div class="add-user">
+      {{ msg }}
+    </div>
+    }
+  </div>
+</div>

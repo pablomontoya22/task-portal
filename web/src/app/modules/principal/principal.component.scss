@@ -1,0 +1,100 @@
+header {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3rem;
+
+  #exit {
+    margin-left: 10px;
+    font-size: 28pt;
+    cursor: pointer;
+    color: #ff0606;
+    height: 32px;
+    width: 35px;
+  }
+}
+
+#addTask {
+  position: fixed;
+  bottom: 4%;
+  right: 2%;
+  background: #93fd75;
+  padding: 1em;
+  box-shadow: 0 0 15px;
+  font-size: 11pt;
+  border: 2px solid #282828;
+  cursor: pointer;
+  box-shadow: 0 0 15px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.welcome-container {
+  text-align: justify;
+  padding: 1.5rem 3rem;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 80px;
+
+  .welcome-txt {
+    text-align: center;
+  }
+
+  .good-luck-txt {
+    color: #ff6600;
+    font-weight: bold;
+  }
+
+  .card {
+    max-width: 400px;
+    margin: 0.5em;
+  }
+
+  .completed {
+    background-color: #7f56f0;
+    color: white;
+  }
+
+  .card-footer {
+    padding: 16px;
+    text-align: right;
+
+    .date {
+      float: left;
+      font-weight: bold;
+      line-height: 1.6em;
+    }
+  }
+
+  .mat-icon {
+    cursor: pointer;
+  }
+
+  .mat-mdc-card-content {
+    height: 13em;
+    overflow: auto;
+    word-break: break-word;
+  }
+
+  .mat-mdc-card {
+    max-width: 20em;
+    min-width: 20em;
+  }
+
+  .mat-mdc-card-header {
+    background-color: #f2f2f2;
+    padding-bottom: 5px;
+
+    .title {
+      float: left;
+    }
+
+    .complete {
+      position: absolute;
+      right: 10px;
+      margin-top: -3px;
+    }
+  }
+}
