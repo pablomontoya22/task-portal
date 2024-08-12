@@ -89,6 +89,9 @@ header {
 
     .title {
       float: left;
+      overflow: hidden;
+      width: 150px;
+      height: 35px;
     }
 
     .complete {
